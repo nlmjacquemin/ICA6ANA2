@@ -1,0 +1,15 @@
+#!/bin/bash
+
+WORKING_DIR=$2
+
+cd $WORKING_DIR
+
+SCRIPT=$3
+
+PATH_TO_SCRIPT=~/scripts/$SCRIPT
+
+Rscript $PATH_TO_SCRIPT.R ${@:4}
+
+PATH_TO_JOB_LOG_DIR=$1
+
+cp $PATH_TO_SCRIPT $PATH_TO_JOB_LOG_DIR
